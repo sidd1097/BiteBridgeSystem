@@ -17,7 +17,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 public class QRCodeGenerator {
 
 	public static String getPath(Orders order) {
-		String qrCodePath = "C:/Users/User/Downloads/CdacProject/OrderQRCodes/" + order.getStudent().getId() + "/";
+		String qrCodePath = System.getProperty("user.dir") + "/OrderQRCodes/" + order.getStudent().getId() + "/";
 		String qrCodeName = qrCodePath + order.getStudent().getPrn() + "_" + order.getId() + "_QRCODE.png";
 		return qrCodeName;
 	}
