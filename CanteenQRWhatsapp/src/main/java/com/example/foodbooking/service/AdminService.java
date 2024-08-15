@@ -63,12 +63,14 @@ public class AdminService {
 //		return new ApiResponse("UserName Found Successfully");
 //	}
 
-	public ApiResponse addNewDish(@Valid DishDTO dish) throws ServerSideException {
+	public DishDTO addNewDish(@Valid DishDTO dish) throws ServerSideException {
 		Admin adminLogin = adminRepository.findById(processUserDetails())
 				.orElseThrow(() -> new ServerSideException("No such Admin exists with given UserId"));
 		Dish addedDish = mapper.map(dish, Dish.class);
 		adminLogin.addDish(addedDish);
-		return new ApiResponse("Dish Added Successfully");
+		mapper.map(dishReposistory.save(addedDish), dish);
+
+		return dish;
 	}
 
 	public ApiResponse deleteExistingDish(Long id) throws ServerSideException {
