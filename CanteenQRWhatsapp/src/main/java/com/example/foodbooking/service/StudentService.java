@@ -21,6 +21,7 @@ import com.example.foodbooking.dto.CartItemDTO;
 import com.example.foodbooking.dto.DishDTO;
 import com.example.foodbooking.dto.FriendDTO;
 import com.example.foodbooking.dto.OrdersDTO;
+import com.example.foodbooking.dto.StudentDTO;
 import com.example.foodbooking.dto.StudentSideUpdationDTO;
 import com.example.foodbooking.entity.Cart;
 import com.example.foodbooking.entity.CartItem;
@@ -71,6 +72,11 @@ public class StudentService {
 
 	@Autowired
 	private PasswordEncoder encoder;
+
+	public StudentDTO getStudentDetails() throws ServerSideException {
+		return mapper.map(studentRepository.findById(processUserDetails())
+				.orElseThrow(() -> new ServerSideException("No Student with given Id Present")), StudentDTO.class);
+	}
 
 	public Long processUserDetails() {
 		CustomUserDetails principal = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication()
