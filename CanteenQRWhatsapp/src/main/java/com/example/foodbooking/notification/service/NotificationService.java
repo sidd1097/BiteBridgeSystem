@@ -23,8 +23,7 @@ public class NotificationService {
 	private String uri;
 
 	public NotificationService() {
-		try (BufferedReader reader = new BufferedReader(
-				new InputStreamReader(new FileInputStream("ngrok_url.txt"), StandardCharsets.UTF_16))) {
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("ngrok_url.txt"), StandardCharsets.UTF_16))) {
 			String line = reader.readLine();
 			if (line != null) {
 				uri = line.trim(); // .trim() to remove any leading or trailing whitespace
