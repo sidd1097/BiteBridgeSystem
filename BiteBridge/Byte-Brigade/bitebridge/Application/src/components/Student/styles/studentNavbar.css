@@ -115,7 +115,7 @@
     cursor: pointer;
 }
 
-.profile-dropdown {
+.Studentprofile-dropdown {
     opacity: 0;
     position: absolute;
     top: 90%;
@@ -126,24 +126,24 @@
     transition: right 0.5s ease, opacity 0.5s ease;
 }
 
-.profile-dropdown.open {
+.Studentprofile-dropdown.open {
     opacity: 1;
-    right: -1vw;
+    right: -3.2vw;
 }
 
-.profile-dropdown ul {
+.Studentprofile-dropdown ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.profile-dropdown ul li {
+.Studentprofile-dropdown ul li {
     cursor: pointer;
     margin: 0;
     padding: 1rem;
 }
 
-.profile-dropdown li:hover {
+.Studentprofile-dropdown li:hover {
     background-color: rgba(126, 204, 48, 0.708);
 }
 

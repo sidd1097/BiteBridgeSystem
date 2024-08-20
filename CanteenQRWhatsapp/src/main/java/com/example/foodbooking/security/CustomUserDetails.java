@@ -23,7 +23,6 @@ public class CustomUserDetails implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// class : SimpleGrantedAuthority --> GrantedAuthority
 		if (user instanceof Admin)
 			return List.of(new SimpleGrantedAuthority(((Admin) user).getRole().toString()));
 		else if (user instanceof Student)

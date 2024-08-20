@@ -16,7 +16,7 @@ import com.example.foodbooking.repository.StudentRepository;
 @Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService {
-	// dep : dao layer
+
 	@Autowired
 	private AdminRepository adminRepo;
 

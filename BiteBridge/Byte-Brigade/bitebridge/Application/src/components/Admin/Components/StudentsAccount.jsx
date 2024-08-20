@@ -86,13 +86,13 @@ const AddStudentForm = ({ onStudentAdded }) => {
     <form onSubmit={handleSubmit} className="forms">
       <h3>Add Student</h3>
       <label>
-        Username (Email):
+        Username:
         <input
           type="email"
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter student email"
+          
           readOnly
         />
         {errors.username && <p className="error">{errors.username}</p>}
@@ -334,7 +334,7 @@ const UpdateStudentForm = ({ onStudentUpdated }) => {
         {errors.id && <p className="error">{errors.id}</p>}
       </label>
       <label>
-        Username (Email):
+        Username:
         <input
           type="email"
           name="username"
@@ -352,7 +352,7 @@ const UpdateStudentForm = ({ onStudentUpdated }) => {
           name="password"
           value={password}
           onChange={handleChange}
-          placeholder="Enter new password (optional)"
+          placeholder="Enter new password"
         />
         {errors.password && <p className="error">{errors.password}</p>}
       </label>
